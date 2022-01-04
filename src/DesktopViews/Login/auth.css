@@ -1,0 +1,58 @@
+.auth_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #344955;
+  width: 350px;
+  height: 500px;
+  border-radius: 10px;
+  padding: 5px 20px;
+}
+.auth_container h2 {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+.auth_container label {
+  font-size: 13px;
+  color: #b9bbbe;
+  font-weight: bold;
+}
+.auth_container .email_input,
+.auth_container .password_input {
+  width: 97%;
+  height: 45px;
+  background-color: #202225;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 0px 5px;
+  margin: 5px 0px;
+}
+.login_btn,
+.reg_btn {
+  width: 100%;
+  height: 40px;
+  background-color: #f9aa33;
+  color: white;
+  margin-top: 80px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.reg_btn {
+  margin-top: 40px !important;
+}
+.no_account_link {
+  margin-top: 14px;
+  color: white;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+}
