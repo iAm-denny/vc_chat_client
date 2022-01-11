@@ -396,7 +396,7 @@ function Chat(props) {
 
       const items = sortedDays.reduce((acc, date) => {
         const sortedMessages = days[date].sort(
-          (x, y) => new Date(y.createdAt) - new Date(x.createdAt)
+          (x, y) => new Date(x.createdAt) - new Date(y.createdAt)
         );
         let newArray = [...sortedMessages];
 
