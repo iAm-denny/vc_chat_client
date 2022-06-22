@@ -75,6 +75,7 @@ function DesktopNavigation(props) {
   useEffect(() => {
     if (socket) {
       socket.on("send_noti", (data) => {
+        console.log("data", data);
         setIsNoti(data.notification);
       });
     }
@@ -82,7 +83,9 @@ function DesktopNavigation(props) {
   useEffect(() => {
     getNotis();
   }, []);
-
+  useEffect(() => {
+    getNotis();
+  }, [isNoti]);
   const addFriendHandle = () => {
     let taglineTxt;
     if (tagline.includes("#")) {
@@ -163,7 +166,7 @@ function DesktopNavigation(props) {
       setNotiList(notiItems.getnotis);
     }
   }, [notiItems]);
-
+  console.log("notiItems", notiItems);
   const responseFriendHandle = (status, sender_id) => {
     responseFriend({
       variables: {
@@ -189,7 +192,12 @@ function DesktopNavigation(props) {
   }, [resFri]);
 
   useEffect(() => {
-    if (fetchFriData && fetchFriData.FriendList.message == "success") {
+    if (
+      fetchFriData &&
+      fetchFriData.FriendList &&
+      fetchFriData.FriendList.message &&
+      fetchFriData.FriendList.message == "success"
+    ) {
       if (fetchFriData.FriendList.users) {
         setFriendList(fetchFriData.FriendList.users);
       }
